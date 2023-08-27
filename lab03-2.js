@@ -170,70 +170,65 @@
 // // 6. Create a function unique(duplicatesArray) which takes an array parameter that may
 // // include duplicates. Your function should return an array containing only the unique values
 // // from duplicatesArray.
-// // Test with the following arrays and create another one of your own. // Use Set(), Array.filter()
+// // Test with the following arrays and create another one of your own.
 
-// // const colours = ['red', 'green', 'blue', 'yellow', 'orange', 'red', 'blue', 'yellow']
-// // const testScores = [55, 84, 97, 63, 55, 32, 84, 91, 55, 43]
-// // const fruit = ['apple', 'orange', 'banana', 'mango', 'strawberry', 'orange', 'banana']
-// // console.log(unique(colours)) // [ 'red', 'green', 'blue', 'yellow', 'orange' ]
-// // console.log(unique(testScores)) // [ 55, 84, 97, 63, 32, 91, 43 ]
+// const colours = ['red', 'green', 'blue', 'yellow', 'orange', 'red', 'blue', 'yellow']
+// const testScores = [55, 84, 97, 63, 55, 32, 84, 91, 55, 43]
+// const fruit = ['apple', 'orange', 'banana', 'mango', 'strawberry', 'orange', 'banana']
+// console.log(unique(colours)) // [ 'red', 'green', 'blue', 'yellow', 'orange' ]
+// console.log(unique(testScores)) // [ 55, 84, 97, 63, 32, 91, 43 ]
 
-// // function unique(duplicatesArray) {
-// //     return result = new Set(duplicatesArray);
-// // };
+// function unique(duplicatesArray) {
+//     return result = new Set(duplicatesArray);
+// };
 
-// // console.log(unique(colours));
-// // console.log(unique(testScores));
-// // console.log(unique(fruit));
+// console.log(unique(colours));
+// console.log(unique(testScores));
+// console.log(unique(fruit));
 
-// // 7. Use the following array of book objects to practice the array functions for map, find and
-// // filter. Test each of your answers to the below tasks.
-// // let books = [
-// // { id: 1, title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', year: 1925 },
-// // { id: 2, title: 'To Kill a Mockingbird', author: 'Harper Lee', year: 1960 },
-// // { id: 3, title: '1984', author: 'George Orwell', year: 1949 },
-// // { id: 4, title: 'Brave New World', author: 'Aldous Huxley', year: 1932 },
-// // { id: 5, title: 'The Catcher in the Rye', author: 'J.D. Salinger', year: 1951 },
-// // ];
-// // a) Write a function getBookTitle(bookId) that uses the find function to return the
-// // title of the book object with the matching id. //how to return only title?
+// 7. Use the following array of book objects to practice the array functions for map, find and
+// filter. Test each of your answers to the below tasks.
+let books = [
+{ id: 1, title: 'The Great Gatsby', author: 'F. Scott Fitzgerald', year: 1925 },
+{ id: 2, title: 'To Kill a Mockingbird', author: 'Harper Lee', year: 1960 },
+{ id: 3, title: '1984', author: 'George Orwell', year: 1949 },
+{ id: 4, title: 'Brave New World', author: 'Aldous Huxley', year: 1932 },
+{ id: 5, title: 'The Catcher in the Rye', author: 'J.D. Salinger', year: 1951 },
+];
+// a) Write a function getBookTitle(bookId) that uses the find function to return the title of the book object with the matching id. 
+//*how to return only title?*
 
-// // function getBookTitle(bookId) {
-// //    return result = books.find(books => books.id === bookId);
-// // };
+// function getBookTitle(bookId) {
+//    return result = books.find(books => books.id === bookId);
+// };
 
-// // console.log(getBookTitle(1));
+// console.log(getBookTitle(1));
 
 
-// // b) Write a function getOldBooks() that uses the filter function to return all book
-// // objects written before 1950.
+// b) Write a function getOldBooks() that uses the filter function to return all book objects written before 1950.
+// function getOldBooks() {
+//     return books.filter(books => books.year <= 1950);
+// };
 
-// // function getOldBooks() {
-// //     return books.filter(books => books.year <= 1950);
-// // };
+// let oldBooks = getOldBooks();
 
-// // let oldBooks = getOldBooks();
+// console.log(oldBooks);
 
-// // console.log(oldBooks);
+// c) Write a function addGenre() that uses the map function to add a new genre property
+// to all of the above books, with the value ‘classic’. 
 
-// // c) Write a function addGenre() that uses the map function to add a new genre property
-// // to all of the above books, with the value ‘classic’. //changed const to let in original
+// function addGenre(newGenre) {
+//     books = books.map(books => {
+//         return {...books, genre: newGenre};
+//     });
+// };
 
-// // function addGenre(newGenre) {
-// //     books = books.map(books => {
-// //         return {...books, genre: newGenre}; //... is spread
-// //     });
-// // };
+// addGenre('classics');
 
-// // addGenre('classics');
-// // console.log(books);
+// d) (Extension) Write a function getTitles(authorInitial) that uses map and filter together to return an array of book titles for books written by authors whose
+// names start with authorInitial.
 
-// // d) (Extension) Write a function getTitles(authorInitial) that uses map and
-// // filter together to return an array of book titles for books written by authors whose
-// // names start with authorInitial.
-
-// // e) (Extension) Write a function latestBook() that uses find and forEach to get the
-// // book with the most recent publication date.
+// e) (Extension) Write a function latestBook() that uses find and forEach to get the book with the most recent publication date.
 
 // // 8. The following code creates a new Map object for storing names beginning with A, B, or C
 // // with their phone numbers.
@@ -305,47 +300,41 @@
 
 // console.log(`${highestSalaryEarner} is the highest earner`);
 
-// 10.The following code uses the Date object to print the current time and the number of hours
-// that have passed today so far. Extend the code to do the following:
+// // 10.The following code uses the Date object to print the current time and the number of hours
+// // that have passed today so far. Extend the code to do the following:
 
-const today = new Date();
-console.log('Current time is ' + today.toLocaleTimeString())
-console.log(today.getHours() + ' hours have passed so far today')
+// const today = new Date();
+// console.log('Current time is ' + today.toLocaleTimeString())
+// console.log(today.getHours() + ' hours have passed so far today')
 
-// // a) Print the total number of minutes that have passed so far today
-console.log(today.getMinutes() + ' minutes have passed so far today')
-// // b) Print the total number of seconds that have passed so far today
-console.log(today.getSeconds() + ' seconds have passed so far today')
+// // // a) Print the total number of minutes that have passed so far today
+// console.log(today.getMinutes() + ' minutes have passed so far today')
+// // // b) Print the total number of seconds that have passed so far today
+// console.log(today.getSeconds() + ' seconds have passed so far today')
 
-// // c) Calculate and print your age as: 'I am x years, y months and z days old'
-// function myAge(birthYear) {
-//     let currentYear = new Date().getFullYear();
-//     return currentYear - birthYear;
+// //c) Calculate and print your age as: 'I am x years, y months and z days old'
+// // *stuck*
+
+// // d) Write a function daysInBetween(date1, date2) which calculates and returns the amount
+// // of days in between the two given dates.
+
+// let date1 = new Date('05/05/2010'); //m-d-y
+// let date2 = new Date('05/10/2010');
+
+// let difference = date2.getTime() - date1.getTime(); //milisec
+
+// let days = Math.ceil(difference / (1000 * 3600 * 24)); //round up, 1000 mili, (60sec x 60sec) 24hr
+// console.log(days);
+
+// function daysInBetween(start, end) {
+//     let date1 = new Date(start);
+//     let date2 = new Date(end);
+
+//     let difference = date2.getTime() - date1.getTime();
+
+//     let days = Math.ceil(difference / (1000 * 3600 * 24));
+   
+//     return days;
 // };
 
-// console.log(`I am ${myAge(1993)} years, y months and z days old`);
-
-
-// d) Write a function daysInBetween(date1, date2) which calculates and returns the amount
-// of days in between the two given dates.
-
-let date1 = new Date('05/05/2010'); //m-d-y
-let date2 = new Date('05/10/2010');
-
-let difference = date2.getTime() - date1.getTime(); //milisec
-
-let days = Math.ceil(difference / (1000 * 3600 * 24)); //round up, 1000 mili, (60sec x 60sec) 24hr
-console.log(days);
-
-function daysInBetween(start, end) {
-    let date1 = new Date(start);
-    let date2 = new Date(end);
-
-    let difference = date2.getTime() - date1.getTime();
-
-    let days = Math.ceil(difference / (1000 * 3600 * 24));
-   
-    return days;
-};
-
-console.log(daysInBetween('05/05/2010', '05/10/2010'));
+// console.log(daysInBetween('05/05/2010', '05/10/2010'));
